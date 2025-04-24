@@ -27,6 +27,7 @@
   <script type="module">
     import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
     emailjs.init('JRUtIuan8URMYebQP');
+    window.emailjs = emailjs; // zpřístupní emailjs globálně
 
     const kapitoly = {
       "Mikrovlnná trouba": [
