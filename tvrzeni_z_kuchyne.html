@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Test – Tvrzení z kuchyně</title>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+ <script type="module">
+  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+
+  emailjs.init('JRUtIuan8URMYebQP');
+
+  window.emailjs = emailjs; // zpřístupnění pro globální volání
+</script>
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
     h1 { text-align: center; }
