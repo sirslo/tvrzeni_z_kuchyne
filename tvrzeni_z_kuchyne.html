@@ -100,7 +100,7 @@
         message: odpovedi
       })
       .then(() => alert("Odpověď úspěšně odeslána."))
-      ..catch(err => {
+      .catch(err => {
   console.error('EmailJS chyba:', err);
   alert("Nastala chyba při odesílání: " + (err.text || JSON.stringify(err)));
 });
