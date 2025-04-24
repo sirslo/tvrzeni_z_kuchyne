@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <h1>Testík: Fyzikální tvrzení z kuchyně</h1>
+  <h1>Test: Fyzikální tvrzení z kuchyně</h1>
 
   <label for="studentName">Jméno:</label>
   <input type="text" id="studentName" placeholder="Zadejte své jméno">
@@ -29,81 +29,79 @@
     emailjs.init('JRUtIuan8URMYebQP');
     window.emailjs = emailjs;
 
-    window.addEventListener("DOMContentLoaded", () => {
-      const kapitoly = {
-        "Mikrovlnná trouba": [
-          "Pokud rozmístíte několik mikrovlnných trub do kruhu a nasměrujete je na vajíčko uprostřed, můžete ho bezdotykově uvařit.",
-          "Pokud při opravě mikrovlnné trouby obejdete bezpečnostní pojistky a spustíte ji s otevřenými dvířky, může mikrovlnné záření vážně poškodit vaši ruku.",
-          "Mikrovlnná trouba ničí vitamíny v potravinách více než klasické vaření ve vodě."
-        ],
-        "Voda a vaření": [
-          "Voda ohřívaná v mikrovlnné troubě se může přehřát – mít teplotu vyšší než 100 °C, aniž by začala vřít.",
-          "Když do vroucí vody nasypete sůl, začne voda okamžitě silněji vřít, protože sůl zvyšuje energii molekul.",
-          "Pokud voda vře při pokojové teplotě díky sníženému tlaku, lze v ní s výraznou úsporou energie uvařit maso stejně dobře jako při běžném vaření."
-        ],
-        "Chlazení a mražení": [
-          "Vařící voda může na silném mrazu zmrznout dříve než studená.",
-          "Pokud necháte otevřenou ledničku v zavřené místnosti, začne se po čase snižovat teplota vzduchu v místnosti.",
-          "Mražené maso se rozmrazí rychleji ve studené vodě než na vzduchu při pokojové teplotě."
-        ],
-        "Trouba a pečení": [
-          "Jídlo se v horkovzdušné troubě peče rychleji, protože teplo se předává prouděním vzduchu, nikoli zářením.",
-          "Hliníková fólie udrží jídlo déle teplé, protože dobře vede teplo.",
-          "Když troubu předem předehřejete, upeče se jídlo rychleji i při stejné nastavené teplotě."
-        ],
-        "Tlak a pára": [
-          "Pokud během vaření v tlakovém hrnci otevřete ventil příliš rychle, může jídlo vzkypět nebo vystříknout.",
-          "Když se do horkého oleje dostane kapka vody, může dojít k výbuchu, protože voda se okamžitě změní na páru.",
-          "Pára o teplotě 100 °C způsobí při kontaktu s pokožkou stejné popáleniny jako voda o stejné teplotě."
-        ],
-        "Teplo a dotyk v kuchyni": [
-          "Pokud sáhnete na kovovou lžíci a dřevěnou vařečku, které ležely celý den vedle sebe v kuchyni, kov bude studenější, protože má nižší teplotu.",
-          "Když horký plech vyndáte z trouby mokrou utěrkou, ochrání vás to stejně jako suchá – voda přece chladí.",
-          "Pokud se dotknete sklokeramické varné desky krátce po vypnutí, nehrozí popálení, protože už nevyzařuje teplo."
-        ],
-        "Mytí nádobí": [
-          "Teplá voda myje mastné nádobí lépe než studená.",
-          "Čím více pěny vytvoříte, tím lépe saponát odstraňuje mastnotu.",
-          "Nádobí se po opláchnutí horkou vodou usuší rychleji než po opláchnutí studenou vodou."
-        ],
-        "Nápoje": [
-          "Studená limonáda chutná méně sladce než ta samá limonáda při pokojové teplotě.",
-          "Plechovka coly klesne ke dnu, zatímco plechovka coly light plave, protože mají různou hustotu.",
-          "Sycený nápoj zteplá rychleji než nesycený."
-        ]
-      };
+    const kapitoly = {
+      "Mikrovlnná trouba": [
+        "Pokud rozmístíte několik mikrovlnných trub do kruhu a nasměrujete je na vajíčko uprostřed, můžete ho bezdotykově uvařit.",
+        "Pokud při opravě mikrovlnné trouby obejdete bezpečnostní pojistky a spustíte ji s otevřenými dvířky, může mikrovlnné záření vážně poškodit vaši ruku.",
+        "Mikrovlnná trouba ničí vitamíny v potravinách více než klasické vaření ve vodě."
+      ],
+      "Voda a vaření": [
+        "Voda ohřívaná v mikrovlnné troubě se může přehřát – mít teplotu vyšší než 100 °C, aniž by začala vřít.",
+        "Když do vroucí vody nasypete sůl, začne voda okamžitě silněji vřít, protože sůl zvyšuje energii molekul.",
+        "Pokud voda vře při pokojové teplotě díky sníženému tlaku, lze v ní s výraznou úsporou energie uvařit maso stejně dobře jako při běžném vaření."
+      ],
+      "Chlazení a mražení": [
+        "Vařící voda může na silném mrazu zmrznout dříve než studená.",
+        "Pokud necháte otevřenou ledničku v zavřené místnosti, začne se po čase snižovat teplota vzduchu v místnosti.",
+        "Mražené maso se rozmrazí rychleji ve studené vodě než na vzduchu při pokojové teplotě."
+      ],
+      "Trouba a pečení": [
+        "Jídlo se v horkovzdušné troubě peče rychleji, protože teplo se předává prouděním vzduchu, nikoli zářením.",
+        "Hliníková fólie udrží jídlo déle teplé, protože dobře vede teplo.",
+        "Když troubu předem předehřejete, upeče se jídlo rychleji i při stejné nastavené teplotě."
+      ],
+      "Tlak a pára": [
+        "Pokud během vaření v tlakovém hrnci otevřete ventil příliš rychle, může jídlo vzkypět nebo vystříknout.",
+        "Když se do horkého oleje dostane kapka vody, může dojít k výbuchu, protože voda se okamžitě změní na páru.",
+        "Pára o teplotě 100 °C způsobí při kontaktu s pokožkou stejné popáleniny jako voda o stejné teplotě."
+      ],
+      "Teplo a dotyk v kuchyni": [
+        "Pokud sáhnete na kovovou lžíci a dřevěnou vařečku, které ležely celý den vedle sebe v kuchyni, kov bude studenější, protože má nižší teplotu.",
+        "Když horký plech vyndáte z trouby mokrou utěrkou, ochrání vás to stejně jako suchá – voda přece chladí.",
+        "Pokud se dotknete sklokeramické varné desky krátce po vypnutí, nehrozí popálení, protože už nevyzařuje teplo."
+      ],
+      "Mytí nádobí": [
+        "Teplá voda myje mastné nádobí lépe než studená.",
+        "Čím více pěny vytvoříte, tím lépe saponát odstraňuje mastnotu.",
+        "Nádobí se po opláchnutí horkou vodou usuší rychleji než po opláchnutí studenou vodou."
+      ],
+      "Nápoje": [
+        "Studená limonáda chutná méně sladce než ta samá limonáda při pokojové teplotě.",
+        "Plechovka coly klesne ke dnu, zatímco plechovka coly light plave, protože mají různou hustotu.",
+        "Sycený nápoj zteplá rychleji než nesycený."
+      ]
+    };
 
-      const container = document.getElementById('otazky');
-      const ulozenaOtazka = [];
+    const container = document.getElementById('otazky');
+    const ulozenaOtazka = [];
 
-      Object.entries(kapitoly).forEach(([nazev, tvrzeni], index) => {
-        const nahodne = tvrzeni[Math.floor(Math.random() * tvrzeni.length)];
-        ulozenaOtazka.push({ kapitola: nazev, text: nahodne });
-        const div = document.createElement('div');
-        div.className = 'tvrzeni';
-        div.innerHTML = `<h3>${index + 1}. ${nazev}</h3><p>${nahodne}</p><textarea placeholder='Vaše odpověď: rozhodněte o pravdivosti a vysvětlete.'></textarea>`;
-        container.appendChild(div);
-      });
+    Object.entries(kapitoly).forEach(([nazev, tvrzeni], index) => {
+      const nahodne = tvrzeni[Math.floor(Math.random() * tvrzeni.length)];
+      ulozenaOtazka.push({ kapitola: nazev, text: nahodne });
+      const div = document.createElement('div');
+      div.className = 'tvrzeni';
+      div.innerHTML = `<h3>${index + 1}. ${nazev}</h3><p>${nahodne}</p><textarea placeholder='Vaše odpověď: rozhodněte o pravdivosti a vysvětlete.'></textarea>`;
+      container.appendChild(div);
+    });
 
-      document.getElementById('submitBtn').addEventListener('click', () => {
-        if (!confirm("Opravdu odeslat všechny odpovědi?")) return;
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      if (!confirm("Opravdu odeslat všechny odpovědi?")) return;
 
-        const jmeno = document.getElementById('studentName').value.trim();
-        if (!jmeno) return alert("Zadejte prosím své jméno.");
+      const jmeno = document.getElementById('studentName').value.trim();
+      if (!jmeno) return alert("Zadejte prosím své jméno.");
 
-        const odpovedi = Array.from(document.querySelectorAll('textarea')).map((ta, i) => {
-          return `${i + 1}. ${ulozenaOtazka[i].kapitola}\nTvrzení: ${ulozenaOtazka[i].text}\nOdpověď: ${ta.value.trim()}\n`;
-        }).join("\n\n");
+      const odpovedi = Array.from(document.querySelectorAll('textarea')).map((ta, i) => {
+        return `${i + 1}. ${ulozenaOtazka[i].kapitola}\nTvrzení: ${ulozenaOtazka[i].text}\nOdpověď: ${ta.value.trim()}\n`;
+      }).join("\n\n");
 
-        emailjs.send("service_l12kund", "template_pthx4qc", {
-          student_name: jmeno,
-          message: odpovedi
-        })
-        .then(() => alert("Odpověď úspěšně odeslána."))
-        .catch(err => {
-          console.error('EmailJS chyba:', err);
-          alert("Nastala chyba při odesílání: " + (err.text || JSON.stringify(err)));
-        });
+      emailjs.send("service_l12kund", "template_pthx4qc", {
+        student_name: jmeno,
+        message: odpovedi
+      })
+      .then(() => alert("Odpověď úspěšně odeslána."))
+      .catch(err => {
+        console.error('EmailJS chyba:', err);
+        alert("Nastala chyba při odesílání: " + (err.text || JSON.stringify(err)));
       });
     });
   </script>
