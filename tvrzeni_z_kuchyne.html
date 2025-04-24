@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Test – Tvrzení z kuchyně</title>
- <script type="module">
-  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-
-  emailjs.init('JRUtIuan8URMYebQP');
-
-  window.emailjs = emailjs; // zpřístupnění pro globální volání
-</script>
+  <script type="module">
+    import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+    emailjs.init('JRUtIuan8URMYebQP');
+    window.emailjs = emailjs;
+  </script>
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
     h1 { text-align: center; }
@@ -32,10 +30,6 @@
   <button onclick="odeslatOdpovedi()">Odeslat odpovědi</button>
 
   <script>
-    (function() {
-      emailjs.init("JRUtIuan8URMYebQP"); // <- zde doplň skutečné User ID z EmailJS
-    })();
-
     const kapitoly = {
       "Mikrovlnná trouba": [
         "Pokud rozmístíte několik mikrovlnných trub do kruhu a nasměrujete je na vajíčko uprostřed, můžete ho bezdotykově uvařit.",
@@ -101,15 +95,15 @@
         return `${i + 1}. ${ulozenaOtazka[i].kapitola}\nTvrzení: ${ulozenaOtazka[i].text}\nOdpověď: ${ta.value.trim()}\n`;
       }).join("\n\n");
 
-      emailjs.send("service_l12kund", "template_pthx4qc", {
+      window.emailjs.send("service_l12kund", "template_pthx4qc", {
         student_name: jmeno,
         message: odpovedi
       })
       .then(() => alert("Odpověď úspěšně odeslána."))
       .catch(err => {
-  console.error('EmailJS chyba:', err);
-  alert("Nastala chyba při odesílání: " + (err.text || JSON.stringify(err)));
-});
+        console.error('EmailJS chyba:', err);
+        alert("Nastala chyba při odesílání: " + (err.text || JSON.stringify(err)));
+      });
     }
   </script>
 </body>
